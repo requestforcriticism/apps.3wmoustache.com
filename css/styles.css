@@ -1,0 +1,21 @@
+body {
+  padding-top: 5rem;
+}
+
+.icon-label {
+  height: 50px;
+  width: 50px;
+}
+
+.score-group {
+  margin-bottom: 10px;
+}
+
+.logo{
+  max-width: 300px;
+  width: 90%;
+}
+
+.nav-logo{
+  height: 30px;
+}
