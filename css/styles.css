@@ -11,11 +11,29 @@ body {
   margin-bottom: 10px;
 }
 
-.logo{
+.logo {
   max-width: 300px;
   width: 90%;
 }
 
-.nav-logo{
+.nav-logo {
   height: 30px;
+}
+
+.radio_item {
+  display: none !important;
+}
+
+.label_item {
+  opacity: 0.5;
+}
+
+.radio_item:checked+label {
+  opacity: 1;
+  background: #000;
+  border-radius: 25px;
+}
+
+label {
+  cursor: pointer;
 }

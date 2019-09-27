@@ -4,7 +4,7 @@ function Player(playerNo, playerIndex) {
     this.counts = [];
     this.counts["fire"] = 0;
     this.counts["water"] = 0;
-    this.counts["air"] = 0;
+    this.counts["ice"] = 0;
     this.counts["earth"] = 0;
     this.counts["lightning"] = 0;
     this.counts["stars"] = 0;
@@ -46,7 +46,7 @@ Player.prototype.getPlayerStats = function () {
         name: this.name,
         fire: this.counts["fire"],
         water: this.counts["water"],
-        air: this.counts["air"],
+        ice: this.counts["ice"],
         earth: this.counts["earth"],
         lightning: this.counts["lightning"],
         stars: this.counts["stars"],
@@ -93,7 +93,7 @@ $(document).ready(function () {
         $("#name").val(playerStats.name)
         $("#fire").val(playerStats.fire)
         $("#water").val(playerStats.water)
-        $("#air").val(playerStats.air)
+        $("#ice").val(playerStats.ice)
         $("#earth").val(playerStats.earth)
         $("#lightning").val(playerStats.lightning)
         $("#stars").val(playerStats.stars)
@@ -156,11 +156,11 @@ $(document).ready(function () {
         }
     });
 
-    $("#air").on("change paste keyup", function () {
+    $("#ice").on("change paste keyup", function () {
         try{
-            activePlayer.setCount('air', parseInt($('#air').val()))
+            activePlayer.setCount('ice', parseInt($('#ice').val()))
         } catch(e){
-            $('#air').val(activePlayer.getPlayerStats().air)
+            $('#ice').val(activePlayer.getPlayerStats().ice)
         }
     });
 
@@ -197,7 +197,47 @@ $(document).ready(function () {
     });
 
     $('#calcButton').click(function(){
-        $("#result").text(activePlayer.calcScore())
+        var oldPlayerStats = activePlayer.getPlayerStats()
+        //I'm not proud of this, stop judging me
+        //boot bonuses
+        var lboot = $('input[name=lboot-bonus]:checked').val()
+        var rboot = $('input[name=rboot-bonus]:checked').val()
+        if(lboot && rboot && lboot != "none" && rboot != "none"){
+            activePlayer.setCount(lboot, activePlayer.getPlayerStats()[lboot] + 1);
+            activePlayer.setCount(rboot, activePlayer.getPlayerStats()[rboot] + 1);
+        }
+
+        var playerScore = activePlayer.calcScore();
+        var playerStats = activePlayer.getPlayerStats() //in case boot updated these values
+        //wizard bonus
+        var wizardBonus = $('input[name=wizard-bonus]:checked').val()
+        if(wizardBonus && wizardBonus != "none"){
+            playerScore = playerScore + playerStats[wizardBonus]
+        }
+        //hat bonus
+        var hat = $('input[name=hat-bonus]:checked').val()
+        if(hat && hat != "none"){
+            playerScore = playerScore + playerStats[hat]
+        }
+
+        //ring bonuses
+        var ringCount = $('input[name=ring-bonus]:checked').val()
+        var enchantments = $('#enchantments').val()
+        if(ringCount && ringCount == 2){
+            playerScore = playerScore + (enchantments * 2)
+            console.log("",ringCount, enchantments)
+        }
+
+        //restore point before calc, damn this is gross
+        activePlayer.setCount("fire", oldPlayerStats["fire"]);
+        activePlayer.setCount("water", oldPlayerStats["water"]);
+        activePlayer.setCount("ice", oldPlayerStats["ice"]);
+        activePlayer.setCount("earth", oldPlayerStats["earth"]);
+        activePlayer.setCount("lightning", oldPlayerStats["lightning"]);
+        activePlayer.setCount("stars", oldPlayerStats["stars"]);
+
+        $("#result").text(playerScore)
+
         $(".score").removeClass("d-none")
         $('#calcButton').text("Re-Calculate")
     })
