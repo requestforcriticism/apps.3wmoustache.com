@@ -58,7 +58,7 @@
 							<!-- <label for="name" class="sr-only">Player 1</label>
 							<input type="text" id="name" class="form-control" placeholder="Player Name" required autofocus> -->
 
-							<h3 class="text-center"><img src="assets/wizard up logo.png" class="logo"><br /><small>Score Calculator</small></h3>
+							<h3 class="text-center"><img src="assets/wizard up logo.png" class="logo"><br /><small>MP Calculator</small></h3>
 
 							<div class="input-group score-group">
 								<span class="input-group-addon" id="lable-earth"><img src="assets/earth.png" alt="earth" class="icon-label"></span>
@@ -96,14 +96,14 @@
 							</div>
 
 							<div class="input-group score-group">
-								<p>Insert some explionation for the following inputs</p>
+								<p>Wizard Element Bonus:</p>
 							</div>
 
 							<div class="input-group score-group">
 								<span class="input-group-addon" id="lable-wizard"><img src="assets/wizard.png" alt="wizard-bonus" class="icon-label"></span>
 
 								<input type="radio" class="radio_item" value="none" name="wizard-bonus" id="wizard-bonus-none" checked>
-								<label class="label_item" for="wizard-bonus-none"> <img src="assets/none.png"> </label>
+								<label class="label_item" for="wizard-bonus-none"> <img src="assets/red x.png"> </label>
 								
 								<input type="radio" class="radio_item" value="earth" name="wizard-bonus" id="wizard-bonus-earth">
 								<label class="label_item" for="wizard-bonus-earth"> <img src="assets/earth.png"> </label>
@@ -120,15 +120,18 @@
 								<input type="radio" class="radio_item" value="water" name="wizard-bonus" id="wizard-bonus-water">
 								<label class="label_item" for="wizard-bonus-water"> <img src="assets/water.png"> </label>
 								
-								<input type="radio" class="radio_item" value="stars" name="wizard-bonus" id="wizard-bonus-magic">
-								<label class="label_item" for="wizard-bonus-magic"> <img src="assets/magic.png"> </label>
+								<!-- <input type="radio" class="radio_item" value="stars" name="wizard-bonus" id="wizard-bonus-magic">
+								<label class="label_item" for="wizard-bonus-magic"> <img src="assets/magic.png"> </label> -->
 							</div>
 
+							<div class="input-group score-group">
+								<p>Hat Element Bonus:</p>
+							</div>
 							<div class="input-group score-group">
 								<span class="input-group-addon" id="lable-hat"><img src="assets/hat.png" alt="hat-bonus" class="icon-label"></span>
 
 								<input type="radio" class="radio_item" value="none" name="hat-bonus" id="hat-bonus-none" checked>
-								<label class="label_item" for="hat-bonus-none"> <img src="assets/none.png"> </label>
+								<label class="label_item" for="hat-bonus-none"> <img src="assets/red x.png"> </label>
 								
 								<input type="radio" class="radio_item" value="earth" name="hat-bonus" id="hat-bonus-earth">
 								<label class="label_item" for="hat-bonus-earth"> <img src="assets/earth.png"> </label>
@@ -145,11 +148,11 @@
 								<input type="radio" class="radio_item" value="water" name="hat-bonus" id="hat-bonus-water">
 								<label class="label_item" for="hat-bonus-water"> <img src="assets/water.png"> </label>
 								
-								<input type="radio" class="radio_item" value="stars" name="hat-bonus" id="hat-bonus-magic">
-								<label class="label_item" for="hat-bonus-magic"> <img src="assets/magic.png"> </label>
+								<!-- <input type="radio" class="radio_item" value="stars" name="hat-bonus" id="hat-bonus-magic">
+								<label class="label_item" for="hat-bonus-magic"> <img src="assets/magic.png"> </label> -->
 							</div>
 
-							<div class="input-group score-group">
+							<!-- <div class="input-group score-group">
 								<span class="input-group-addon" id="lable-boot-1"><img src="assets/2 boots.png" alt="lboot-bonus" class="icon-label"></span>
 
 								<input type="radio" class="radio_item" value="none" name="lboot-bonus" id="lboot-bonus-none" checked>
@@ -172,9 +175,9 @@
 								
 								<input type="radio" class="radio_item" value="stars" name="lboot-bonus" id="lboot-bonus-magic">
 								<label class="label_item" for="lboot-bonus-magic"> <img src="assets/magic.png"> </label>
-							</div>
+							</div> -->
 
-							<div class="input-group score-group">
+							<!-- <div class="input-group score-group">
 								<span class="input-group-addon" id="lable-boot-2"><img src="assets/2 boots.png" alt="rboot-bonus" class="icon-label"></span>
 
 								<input type="radio" class="radio_item" value="none" name="rboot-bonus" id="rboot-bonus-none" checked>
@@ -197,13 +200,16 @@
 								
 								<input type="radio" class="radio_item" value="stars" name="rboot-bonus" id="rboot-bonus-magic">
 								<label class="label_item" for="rboot-bonus-magic"> <img src="assets/magic.png"> </label>
-							</div>
+							</div> -->
 
+							<div class="input-group score-group">
+								<p>Do you have both rings?</p>
+							</div>
 							<div class="input-group score-group">
 								<span class="input-group-addon" id="lable-boot-2"><img src="assets/2 rings.png" alt="ring-bonus" class="icon-label"></span>
 
 								<input type="radio" class="radio_item" value="0" name="ring-bonus" id="ring-bonus-0" checked>
-								<label class="label_item" for="ring-bonus-0"> <img src="assets/none.png"> </label>
+								<label class="label_item" for="ring-bonus-0"> <img src="assets/red x.png"> </label>
 								
 								<!-- <input type="radio" class="radio_item" value="1" name="ring-bonus" id="ring-bonus-1">
 								<label class="label_item" for="ring-bonus-1"> <img src="assets/earth.png"> </label>
@@ -235,7 +241,7 @@
 							</p>
 
 							<h3 class="text-center d-none score">You Scored:</h3>
-							<h1 class="text-center d-none score"><span id="result"></span> points!</h1>
+							<h1 class="text-center d-none score"><span id="result"></span> MP!</h1>
 						</div>
 					</div>
 				</div>
