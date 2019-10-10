@@ -1,0 +1,39 @@
+body {
+  padding-top: 5rem;
+}
+
+.icon-label {
+  height: 50px;
+  width: 50px;
+}
+
+.score-group {
+  margin-bottom: 10px;
+}
+
+.logo {
+  max-width: 300px;
+  width: 90%;
+}
+
+.nav-logo {
+  height: 30px;
+}
+
+.radio_item {
+  display: none !important;
+}
+
+.label_item {
+  opacity: 0.5;
+}
+
+.radio_item:checked+label {
+  opacity: 1;
+  background: #000;
+  border-radius: 25px;
+}
+
+label {
+  cursor: pointer;
+}
